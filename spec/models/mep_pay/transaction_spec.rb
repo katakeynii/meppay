@@ -4,6 +4,8 @@
 #
 #  id           :integer          not null, primary key
 #  montant      :decimal(, )
+#  paid         :boolean
+#  paid_at      :datetime
 #  typable_type :string           not null
 #  uuid         :string
 #  created_at   :datetime         not null
@@ -40,6 +42,7 @@ module MepPay
     describe "Association" do
       it { should have_many(:references).through(:reference_values) }
       it { should have_many(:reference_values) }
+      it { should have_many(:transaction_lines) }
       it { should belong_to(:typable) }
     end
   end

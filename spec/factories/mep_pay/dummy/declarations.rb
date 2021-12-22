@@ -1,16 +1,14 @@
 # == Schema Information
 #
-# Table name: mep_pay_references
+# Table name: mep_pay_dummy_declarations
 #
 #  id         :integer          not null, primary key
-#  code       :string
-#  libelle    :string
+#  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 FactoryBot.define do
-  factory :"mep_pay/reference" do
-    sequence(:code) { |n| "0#{n}" }
-    sequence(:libelle) { |n| "Title##{n}" }
+  factory :dummy_declaration, class: 'Dummy::Declaration' do
+    title { "MyString" }
   end
 end

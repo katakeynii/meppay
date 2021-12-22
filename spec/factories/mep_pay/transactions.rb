@@ -4,6 +4,8 @@
 #
 #  id           :integer          not null, primary key
 #  montant      :decimal(, )
+#  paid         :boolean
+#  paid_at      :datetime
 #  typable_type :string           not null
 #  uuid         :string
 #  created_at   :datetime         not null
@@ -17,8 +19,8 @@
 #
 FactoryBot.define do
   factory :"mep_pay/transaction" do
-    uuid { "MyString" }
-    montant { "9.99" }
+    uuid { "4fa93662-c28c-45c2-be04-f4618f196912" }
+    montant { 10_000 }
     typable { create(:"mep_pay/reference") }
   end
 end

@@ -1,0 +1,3 @@
+class UnknownModelError < StandardError
+    
+end

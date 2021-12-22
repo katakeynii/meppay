@@ -4,6 +4,8 @@
 #
 #  id           :integer          not null, primary key
 #  montant      :decimal(, )
+#  paid         :boolean
+#  paid_at      :datetime
 #  typable_type :string           not null
 #  uuid         :string
 #  created_at   :datetime         not null
@@ -20,6 +22,7 @@ module MepPay
     belongs_to :typable, polymorphic: true
     has_many :reference_values, class_name: 'MepPay::ReferenceValue', foreign_key: "mep_pay_transaction_id"
     has_many :references, through: :reference_values, class_name: 'MepPay::Reference', source: "mep_pay_reference"
+    has_many :transaction_lines, class_name: 'MepPay::TransactionLine', foreign_key: "mep_pay_transaction_id"
     attribute :uuid, :string, default: -> { SecureRandom.uuid }
     validates :uuid, 
       uniqueness: true,
