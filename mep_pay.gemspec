@@ -29,5 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry-rails'
   spec.add_development_dependency 'pry-stack_explorer'
   spec.add_development_dependency 'pry-byebug'
-  spec.add_dependency "rails", "~> 6.1.4", ">= 6.1.4.3"
+  spec.add_dependency "rails"
+#    spec.add_dependency "rails", "~> 6.1.4", ">= 6.1.4.3"
 end
